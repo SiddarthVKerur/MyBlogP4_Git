@@ -12,10 +12,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -52,6 +49,15 @@ public class AuthController {
         Authentication authenticate = authenticationManager.authenticate(token);
         SecurityContextHolder.getContext().setAuthentication(authenticate);
         return new ResponseEntity<>("User sign-in successfully", HttpStatus.OK);
+    }
+
+    @PutMapping("/getmap")
+    public ResponseEntity<String> editString(@PathVariable String name) {
+        return new ResponseEntity<>("hello", HttpStatus.OK);
+    }
+    @DeleteMapping("/deleteMap")
+    public ResponseEntity<String> deleteString(@PathVariable String firstName) {
+        return new ResponseEntity<>(firstName, HttpStatus.OK);
     }
 }
 
