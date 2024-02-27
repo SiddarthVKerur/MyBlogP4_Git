@@ -41,4 +41,9 @@ public class CommentController {
         CommentDto upCom=commentService.updateComment(commentId, commentDto);
         return new ResponseEntity<>(upCom, HttpStatus.OK);
     }
+    @PutMapping
+    public ResponseEntity<CommentDto> updateCommentById1(@RequestParam("commentId") long commentId, @RequestBody CommentDto commentDto) {
+        CommentDto upCom=commentService.updateComment(commentId, commentDto);
+        return new ResponseEntity<>(upCom, HttpStatus.OK);
+    }
 }
