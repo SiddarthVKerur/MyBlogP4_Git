@@ -58,7 +58,8 @@ public class AuthController {
     @DeleteMapping("/deleteMap")
     public ResponseEntity<String> deleteString(@PathVariable String firstName) {
         return new ResponseEntity<>(firstName, HttpStatus.OK);
-//        System.out.println("welcome to java")
+//        System.out.println("welcome to java"):q
+//        System.out.println("ram");
     }
 }
 
